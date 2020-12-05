@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import json
 import mysql.connector
 
-def fetch_data(site)
+def fetch_data(site):
    #based on code from Job Hunter
    jsonpage = 0
    try:
@@ -41,7 +41,7 @@ def query_sql(cursor, query):
    return cursor
 
 
-def francisco_code_untouched()
+def francisco_code_untouched():
    # Connect to database
    # You may need to edit the connect function based on your local settings.
    #This Can connect to local .csv file or website from github
@@ -87,7 +87,7 @@ def insert_data_labels(bars):
          ha='center',
          va='bottom'    
 
-def make_plot(incoming)
+def make_plot(incoming):
    data = incoming.cumsum()
    data.figure()
    df.plt()
