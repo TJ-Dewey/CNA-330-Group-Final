@@ -4,6 +4,19 @@ import pymysql
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import json
+
+def fetch_data(site)
+   #based on code from Job Hunter
+   jsonpage = 0
+   try:
+      contents = urllib.request.urlopen(site)
+      response = contents.reat()
+      jsonpage = json.loads(response)
+   except:
+      pass
+   return jsonpage
+
 # Connect to database
 # You may need to edit the connect function based on your local settings.
 #This Can connect to local .csv file or website from github
@@ -53,7 +66,7 @@ plt.show()
 def group_final():
    #function calls here:
    ## TODO: fetch function
-   # fetch_data()
+   fetch_data(#!# -change to data web location- #!#)
    ## TODO: wrap rest of code into functions anc call them here
    
 
