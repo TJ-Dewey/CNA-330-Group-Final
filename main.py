@@ -25,6 +25,22 @@ def connect_to_sql():
                                   database='cna330')
    return connection
 
+def create_tables(cursor):
+   # Based on code from Job Hunter
+   ## TODO: CHANGE table created here to suit incoming data
+   create = ('''CREATE TABLE IF NOT EXISTS jobs (id INT PRIMARY KEY auto_increment,"
+                        "type varchar(10), title varchar(100), description TEXT CHARSET wtf8, job_id varchar(40),"
+                        "created_at DATE, company varchar(100), location varchar(50),"
+                        "how_to_apply varchar(1000));''')
+   cursor.execute(create)
+   return
+
+def query_sql(cursor, query):
+   # Based on code from Job Hunter
+   cursor.execute(query)
+   return cursor
+
+
 # Connect to database
 # You may need to edit the connect function based on your local settings.
 #This Can connect to local .csv file or website from github
@@ -74,8 +90,11 @@ plt.show()
 def group_final():
    #function calls here:
    ## TODO: fetch function
-   fetch_data(#!# -change to data web location- #!#)
-   ## TODO: wrap rest of code into functions anc call them here
+   data = fetch_data(#!# -change to data web location- #!#)
+   conn = connect_to_sql()
+   cursor = conn.cursor()
+   create_tables(cursor)
+   ## TODO: wrap rest of code into functions and call them here
    
 
 if __name__ == '__main__':
