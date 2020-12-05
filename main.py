@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
+import mysql.connector
 
 def fetch_data(site)
    #based on code from Job Hunter
@@ -16,6 +17,13 @@ def fetch_data(site)
    except:
       pass
    return jsonpage
+
+def connect_to_sql():
+   #based on code from Job hunter
+   connection = mysql.connector.connect(user='root', password='',
+                                  host='127.0.0.1',
+                                  database='cna330')
+   return connection
 
 # Connect to database
 # You may need to edit the connect function based on your local settings.
