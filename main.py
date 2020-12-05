@@ -88,6 +88,7 @@ def insert_data_labels(bars):
          va='bottom'    
 
 def make_plot(incoming):
+   #Based on code from 10 min to Pandas               
    data = incoming.cumsum()
    data.figure()
    df.plt()
