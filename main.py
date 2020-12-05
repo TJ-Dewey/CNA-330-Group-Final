@@ -1,6 +1,9 @@
 import pandas as pd
 from sqlalchemy import create_engine
 import pymysql
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 # Connect to database
 # You may need to edit the connect function based on your local settings.
 #This Can connect to local .csv file or website from github
@@ -13,9 +16,6 @@ data = data.dropna()     # delete all empty lines
 data = data.where(pd.notnull(data), None)     # Aldf'so delete the empty lines
 ##you can google to run panda as console
 ##### PLot #### will show the avarages of age and weight of NBA players
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 df = pd.read_csv("C:\\Users\\Francisco\\Desktop\\nba players.csv") #change for you path location
 subjects = ['Age', 'Weight', ]
 dataset = df.groupby('Position')[subjects].mean()
