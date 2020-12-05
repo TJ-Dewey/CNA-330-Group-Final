@@ -41,37 +41,42 @@ def query_sql(cursor, query):
    return cursor
 
 
-# Connect to database
-# You may need to edit the connect function based on your local settings.
-#This Can connect to local .csv file or website from github
-data = "https://raw.githubusercontent.com/Francisco-222/SQL-FINAL/main/nba%20players.csv"
-# data =  connect from pd.read_csv("nba players.csv")
-#Prints columns and cleans up empty lines
-data=pd.read_csv(data)
-print(data.columns)    # prints columns from csv
-data = data.dropna()     # delete all empty lines
-data = data.where(pd.notnull(data), None)     # Aldf'so delete the empty lines
-##you can google to run panda as console
-##### PLot #### will show the avarages of age and weight of NBA players
-df = pd.read_csv("C:\\Users\\Francisco\\Desktop\\nba players.csv") #change for you path location
-subjects = ['Age', 'Weight', ]
-dataset = df.groupby('Position')[subjects].mean()
-indx = np.arange(len(subjects))
-score_label = np.arange(50, 300, 50)
-PG_means = list(dataset.T['PG'])
-SF_means = list(dataset.T['SF'])
-bar_width = 0.35
-fig, ax = plt.subplots()
-barPG = ax.bar(indx - bar_width/2, PG_means, bar_width, label='PG_means')
-barSF = ax.bar(indx + bar_width/2, SF_means , bar_width, label='SF_means')
-# inserting x axis label
-ax.set_xticks(indx)
-ax.set_xticklabels(subjects)
-# inserting y axis label
-ax.set_yticks(score_label)
-ax.set_yticklabels(score_label)
-# inserting legend
-ax.legend()
+def francisco_code_untouched()
+   # Connect to database
+   # You may need to edit the connect function based on your local settings.
+   #This Can connect to local .csv file or website from github
+   data = "https://raw.githubusercontent.com/Francisco-222/SQL-FINAL/main/nba%20players.csv"
+   # data =  connect from pd.read_csv("nba players.csv")
+   #Prints columns and cleans up empty lines
+   data=pd.read_csv(data)
+   print(data.columns)    # prints columns from csv
+   data = data.dropna()     # delete all empty lines
+   data = data.where(pd.notnull(data), None)     # Aldf'so delete the empty lines
+   ##you can google to run panda as console
+   ##### PLot #### will show the avarages of age and weight of NBA players
+   df = pd.read_csv("C:\\Users\\Francisco\\Desktop\\nba players.csv") #change for you path location
+   subjects = ['Age', 'Weight', ]
+   dataset = df.groupby('Position')[subjects].mean()
+   indx = np.arange(len(subjects))
+   score_label = np.arange(50, 300, 50)
+   PG_means = list(dataset.T['PG'])
+   SF_means = list(dataset.T['SF'])
+   bar_width = 0.35
+   fig, ax = plt.subplots()
+   barPG = ax.bar(indx - bar_width/2, PG_means, bar_width, label='PG_means')
+   barSF = ax.bar(indx + bar_width/2, SF_means , bar_width, label='SF_means')
+   # inserting x axis label
+   ax.set_xticks(indx)
+   ax.set_xticklabels(subjects)
+   # inserting y axis label
+   ax.set_yticks(score_label)
+   ax.set_yticklabels(score_label)
+   # inserting legend
+   ax.legend()
+   insert_data_labels(barPG)
+   insert_data_labels(barSF)
+   plt.show()
+   
 def insert_data_labels(bars):
    for bar in bars:
       bar_height = bar.get_height()
@@ -80,12 +85,13 @@ def insert_data_labels(bars):
          xytext=(0, 3),
          textcoords='offset points',
          ha='center',
-         va='bottom'
-      )
-insert_data_labels(barPG)
-insert_data_labels(barSF)
-plt.show()
+         va='bottom'    
 
+def make_plot(incoming)
+   data = incoming.cumsum()
+   data.figure()
+   df.plt()
+   plt.legend(loc=best)
 
 def group_final():
    #function calls here:
@@ -94,8 +100,11 @@ def group_final():
    conn = connect_to_sql()
    cursor = conn.cursor()
    create_tables(cursor)
+   
    ## TODO: wrap rest of code into functions and call them here
    
+   #!# save make_plot for end #!#
+   make_plot(#!#send data from table here#!#)    
 
 if __name__ == '__main__':
    group_final()
