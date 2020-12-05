@@ -48,3 +48,14 @@ def insert_data_labels(bars):
 insert_data_labels(barPG)
 insert_data_labels(barSF)
 plt.show()
+
+
+def group_final():
+   #function calls here:
+   ## TODO: fetch function
+   # fetch_data()
+   ## TODO: wrap rest of code into functions anc call them here
+   
+
+if __name__ == '__main__':
+   group_final()
