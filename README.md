@@ -10,4 +10,4 @@
 - put the web address of the csv document into the group_final function
 - create a function to send data to the table
 - create a function to get columns from the table
-- whatever is necesary to prep columns (function call) to go to make_plot function
+- whatever is necesary to prep columns (probably a function call) to go to make_plot function
