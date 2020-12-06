@@ -28,7 +28,7 @@ def connect_to_sql():
 def create_tables(cursor):
    # Based on code from Job Hunter
    ## TODO: CHANGE table created here to suit incoming data
-   create = ('''CREATE TABLE IF NOT EXISTS jobs (id INT PRIMARY KEY auto_increment,"
+   create = ('''CREATE TABLE IF NOT EXISTS sports (id INT PRIMARY KEY auto_increment,"
                         "type varchar(10), title varchar(100), description TEXT CHARSET wtf8, job_id varchar(40),"
                         "created_at DATE, company varchar(100), location varchar(50),"
                         "how_to_apply varchar(1000));''')
@@ -40,7 +40,37 @@ def query_sql(cursor, query):
    cursor.execute(query)
    return cursor
 
+def check_table_for_data(new_data):
+   # Based on code from Job Hunter
+   ## TODO: make this function check the table to see if data is repeated
 
+def update_table(cursor, data):
+   # Based on code from Job Hunter
+   check = check_table_for_data(data):
+   if check == True:
+      return
+   else:
+      ## TODO: change the data headers below to fit incoming data from CSV and table
+      type = jobdetails['type']
+      title = jobdetails['title']
+      description = jobdetails['description']
+      job_id = jobdetails['id']
+      created_at = time.strptime(jobdetails['created_at'], "%a %b %c %H:%M:%S %Z %Y")
+      company = jobdetails['company']
+      location = jobdetails['location']
+      how_to_apply = jobdetails['how_to_apply']
+      query = ("INSERT INTO sports (type, title, description, job_id, created_at, company, location, how_to_apply)"
+            "VALUES(%s, %s, %s, %s, %s, %s, %s, %s,)"
+            (type, title, description, job_id, created_at, company, location, how_to_apply))
+      return query_sql(cursor, query)
+
+def fetch_table(cursor):
+   # Based on code from Job Hunter
+   ## TODO: finish query to collect the columns from the table
+   query = ('''SELECT FROM sports WHERE ##____##''')
+   return query_sql(cursor, query)
+
+########
 def francisco_code_untouched():
    # Connect to database
    # You may need to edit the connect function based on your local settings.
@@ -87,6 +117,7 @@ def insert_data_labels(bars):
          textcoords='offset points',
          ha='center',
          va='bottom'    
+#######
 
 def make_plot(incoming):
    #Based on code from 10 min to Pandas               
@@ -102,14 +133,11 @@ def group_final():
    conn = connect_to_sql()
    cursor = conn.cursor()
    create_tables(cursor)
-   ## TODO: send data to table
-   ## TODO: get columns from table
-   ## TODO: prep colums to send to make_plot
-      
+   update_table(cursor, data)
+   cols = fetch_table(cursor)
    ## TODO: wrap rest of code into functions and call them here
-   
    #!# save make_plot for end #!#
-   make_plot(#!#send data from table here#!#)    
+   make_plot(cols)    
 
 if __name__ == '__main__':
    group_final()
