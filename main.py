@@ -101,7 +101,10 @@ def group_final():
    conn = connect_to_sql()
    cursor = conn.cursor()
    create_tables(cursor)
-   
+   ## TODO: send data to table
+   ## TODO: get columns from table
+   ## TODO: prep colums to send to make_plot
+      
    ## TODO: wrap rest of code into functions and call them here
    
    #!# save make_plot for end #!#
