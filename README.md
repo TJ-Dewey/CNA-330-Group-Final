@@ -8,6 +8,6 @@
 # REMAINING TODOs
 - Change the table in the Create_tables function to fit the data from the webside
 - put the web address of the csv document into the group_final function
-- create a function to send data to the table
-- create a function to get columns from the table
-- whatever is necesary to prep columns (probably a function call) to go to make_plot function
+- complete check_table_for_data function. should return boolean 
+- change data headers in update_table function to match data we're using
+- comple SQL query in fetch_table function to suit data we're using
