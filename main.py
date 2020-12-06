@@ -78,6 +78,7 @@ def francisco_code_untouched():
    plt.show()
    
 def insert_data_labels(bars):
+   # a function used in francisco's code above
    for bar in bars:
       bar_height = bar.get_height()
       ax.annotate('{0:.0f}'.format(bar.get_height()),
