@@ -46,7 +46,7 @@ def check_table_for_data(new_data):
 
 def update_table(cursor, data):
    # Based on code from Job Hunter
-   check = check_table_for_data(data):
+   check = check_table_for_data(data)
    if check == True:
       return
    else:
