@@ -42,6 +42,7 @@ def query_sql(cursor, query):
 
 def check_table_for_data(new_data):
    # Based on code from Job Hunter
+   # probably something like check_if_job_exists function from Job Hunter
    ## TODO: make this function check the table to see if data is repeated
 
 def update_table(cursor, data):
