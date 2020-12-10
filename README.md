@@ -12,4 +12,4 @@
 - comple SQL query in fetch_table function to suit data we're using
 
 optional;
-- put the web-address of the csv into the group_final function
+- put the actual web-address of the csv into the group_final function
